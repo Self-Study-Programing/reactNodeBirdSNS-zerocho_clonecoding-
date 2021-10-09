@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "next -p 3060",
     "build": "next build"
   },
   "author": "ksh5324",
@@ -13,8 +13,12 @@
     "@ant-design/icons": "^4.7.0",
     "antd": "^4.16.13",
     "next": "^9.5.5",
+    "next-redux-wrapper": "^6.0.2",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
+    "react-redux": "^7.2.5",
+    "redux": "^4.1.1",
+    "redux-devtools-extension": "^2.13.9",
     "styled-components": "^5.3.1"
   },
   "devDependencies": {
