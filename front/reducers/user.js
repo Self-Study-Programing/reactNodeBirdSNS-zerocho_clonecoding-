@@ -1,5 +1,7 @@
 export const initialState = {
+  isLoggingIn: false,
   isLoggedIn: false,
+  isLoggingOut: false,
   me: null,
   signUpData: {},
   loginData: {},
@@ -23,14 +25,37 @@ const reducers = (state = initialState, action) => {
     case "LOG_IN_REQUEST":
       return {
         ...state,
+        isLoggingIn: true,
+      };
+    case "LOG_IN_SUCCESS":
+      return {
+        ...state,
+        isLoggingIn: false,
         isLoggedIn: true,
-        me: action.data,
+        me: { ...action.data, nickname: "zerocho" },
+      };
+    case "LOG_IN_FAILURE":
+      return {
+        ...state,
+        isLoggingIn: false,
+        isLoggedIn: false,
       };
     case "LOG_OUT_REQUEST":
       return {
         ...state,
+        isLoggingOut: true,
+      };
+    case "LOG_OUT_SUCCESS":
+      return {
+        ...state,
+        isLoggingOut: false,
         isLoggedIn: false,
         me: null,
+      };
+    case "LOG_OUT_FAILURE":
+      return {
+        ...state,
+        isLoggingOut: false,
       };
     default:
       return state;
